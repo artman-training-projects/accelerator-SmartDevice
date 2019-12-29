@@ -12,7 +12,7 @@ npm-debug.*
 Thumbs.db
 
 build/
-source/design/*
+source/design/
 
 .htmlhintrc
 .stylelintrc.js
