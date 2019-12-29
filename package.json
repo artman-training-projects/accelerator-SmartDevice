@@ -1,0 +1,24 @@
+{
+  "name": "accelerator-smartdevice",
+  "version": "1.0.0",
+  "private": true,
+  "author": "Vladimir Artyukhov",
+  "license": "ISC",
+  "description": "учебная стажировка в Лига А, проект - Smart Device",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/artman-training-projects/accelerator-SmartDevice.git"
+  },
+  "bugs": "https://github.com/artman-training-projects/accelerator-SmartDevice/issues",
+  "homepage": "https://github.com/artman-training-projects/accelerator-SmartDevice#readme",
+  "browserslist": [
+    "last 2 versions",
+    "IE 11"
+  ],
+  "devDependencies": {
+    "gulp": "^4.0.x"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
