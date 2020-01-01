@@ -6,12 +6,14 @@ var postcss = require("gulp-postcss");
 var autoprefixer = require("autoprefixer");
 var csso = require("gulp-csso");
 var rename = require("gulp-rename");
+var concat = require("gulp-concat");
+var uglify = require("gulp-uglify");
 var del = require("del");
 var plumber = require("gulp-plumber");
-var server = require("browser-sync");
+var server = require("browser-sync").create();
 
 gulp.task("style", function() {
-  return gulp.src("source/sass/style.scss")
+  return gulp.src("source/sass/main.scss")
     .pipe(plumber())
     .pipe(sourcemap.init())
     .pipe(sass())
@@ -26,7 +28,14 @@ gulp.task("style", function() {
 
 gulp.task("html", function() {
   return gulp.src("source/*.html", {base: "source"})
-  .pipe(gulp.dest("build"))
+    .pipe(gulp.dest("build"))
+});
+
+gulp.task("script", function() {
+  return gulp.src("source/js/*.js")
+    .pipe(concat("min.js"))
+    .pipe(uglify())
+    .pipe(gulp.dest("build/js"))
 });
 
 gulp.task("copy", function() {
@@ -35,17 +44,12 @@ gulp.task("copy", function() {
   ], {
     base: "source"
   })
-  .pipe(gulp.dest("build"))
+    .pipe(gulp.dest("build"))
 });
 
 gulp.task("clean", function() {
   return del("build")
 });
-
-gulp.task("refresh", function(done) {
-  server.reload();
-  done();
-})
 
 gulp.task("server", function() {
   server.init({
@@ -56,9 +60,10 @@ gulp.task("server", function() {
     ui: false
   });
 
-  gulp.watch("source/sass/**/*.{sass,scss}", gulp.series("style", "refresh"));
-  gulp.watch("source/*.html", gulp.series("html", "refresh"));
+  gulp.watch("source/*.html").on("change", gulp.series("html", server.reload));
+  gulp.watch("source/sass/**/*.{sass,scss}").on("change", gulp.series("style", server.reload));
+  gulp.watch("source/js/**/*.js").on("change", gulp.series("script", server.reload));
 });
 
-gulp.task("build", gulp.series("clean", "copy", "style", "html"));
+gulp.task("build", gulp.series("clean", "copy", "html", "style", "script"));
 gulp.task("start", gulp.series("build", "server"));
