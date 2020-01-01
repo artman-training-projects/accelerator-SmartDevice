@@ -5,7 +5,7 @@ notifications:
   email: false
 
 cache:
-  derictories:
+  directories:
   - node_modules
 
 script:
@@ -13,7 +13,7 @@ script:
 
 deploy:
   provider: pages
-  skip-cleanup: true
+  skip_cleanup: true
   github-token: $GITHUB_TOKEN
   local_dir: build
   on:

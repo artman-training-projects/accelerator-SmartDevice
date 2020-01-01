@@ -65,5 +65,10 @@ gulp.task("server", function() {
   gulp.watch("source/js/**/*.js").on("change", gulp.series("script", server.reload));
 });
 
+gulp.task("pixel-glass", function() {
+  return gulp.src("source/design/preview/*", {base: "source/design"})
+    .pipe(gulp.dest("build"))
+});
+
 gulp.task("build", gulp.series("clean", "copy", "html", "style", "script"));
-gulp.task("start", gulp.series("build", "server"));
+gulp.task("start", gulp.series("build", "pixel-glass", "server"));
