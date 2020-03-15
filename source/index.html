@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Smart Device</title>
 
-  <link rel="stylesheet" href="/css/style.min.css">
+  <link rel="stylesheet" href="css/style.min.css">
 
   <!-- Pixel Glass -->
   <style>
@@ -17,14 +17,14 @@
       background-position: 50% 0;
     }
     /* Планшет */
-    @media ( min-width: 768px ) {
+    @media ( min-width: 760px ) {
       html {
         /* Планшетный макет */
         background-image: url( "preview/pr-Tablet.jpg" );
       }
     }
     /* Десктоп */
-    @media ( min-width: 1024px ) {
+    @media ( min-width: 1400px ) {
       html {
         /* Десктопный макет */
         background-image: url( "preview/pr-Desktop.jpg" );
@@ -38,21 +38,23 @@
 </head>
 <body>
   <header class="page-header">
-    <a class="page-header__logo">
-      <p>Smart Device</p>
-      <p>умные технологии</p>
-    </a>
+    <div class="page-header__head">
+      <a class="page-header__logo">
+        <p>Smart Device</p>
+        <p>умные технологии</p>
+      </a>
 
-    <ul class="page-header__list">
-      <li class="page-header__item"><a href="mailto:info@sd.ru">info@sd.ru</a></li>
-      <li class="page-header__item"><a href="tel:+74950005252">+7 (495) 000 52 52</a></li>
-      <li class="page-header__item"><a>Заказать звонок</a></li>
-    </ul>
+      <ul class="page-header__list">
+        <li class="page-header__item page-header__item--mail"><a href="mailto:info@sd.ru">info@sd.ru</a></li>
+        <li class="page-header__item page-header__item--tel"><a href="tel:+74950005252">+7 (495) 000 52 52</a></li>
+        <li class="page-header__item page-header__item--btn"><a>Заказать звонок</a></li>
+      </ul>
+    </div>
 
     <section class="page-header__promo">
       <h1 class="page-header__title">Печатные платы</h1>
       <p class="page-header__description">Производство и монтаж, поставка комплектующих, блоков и модулей</p>
-      <a href="" class="page-header__link">Получить бесплатную консультацию</a>
+      <a href="#!" class="page-header__link" data-link="Бесплатная консультация">Получить бесплатную консультацию</a>
     </section>
   </header>
 

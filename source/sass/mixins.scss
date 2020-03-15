@@ -1,0 +1,48 @@
+@mixin reset-list {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+
+  list-style: none;
+}
+
+@mixin reset-head {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+@mixin reset-text {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+@mixin visually-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+
+  white-space: nowrap;
+
+  border: 0;
+
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+}
+
+@mixin btn {
+  display: inline-block;
+  box-sizing: border-box;
+
+  vertical-align: middle;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+
+  border: 1px solid transparent;
+  border-radius: 5px;
+}

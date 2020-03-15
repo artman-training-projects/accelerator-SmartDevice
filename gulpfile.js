@@ -8,6 +8,11 @@ var csso = require("gulp-csso");
 var rename = require("gulp-rename");
 var concat = require("gulp-concat");
 var uglify = require("gulp-uglify");
+var webp = require("gulp-webp");
+var imagemin = require("gulp-imagemin");
+var svgstore = require("gulp-svgstore");
+var posthtml = require("gulp-posthtml");
+var include = require("posthtml-include");
 var del = require("del");
 var plumber = require("gulp-plumber");
 var server = require("browser-sync").create();
@@ -26,8 +31,11 @@ gulp.task("style", function() {
     .pipe(gulp.dest("build/css"))
 });
 
-gulp.task("html", function() {
-  return gulp.src("source/*.html", {base: "source"})
+gulp.task("html", function () {
+  return gulp.src("source/*.html")
+    .pipe(posthtml([
+      include()
+    ]))
     .pipe(gulp.dest("build"))
 });
 
@@ -38,9 +46,34 @@ gulp.task("script", function() {
     .pipe(gulp.dest("build/js"))
 });
 
+gulp.task("images", function() {
+  return gulp.src(["source/design/**/*.{png,jpg,svg}", "!source/design/preview/**"])
+    .pipe(imagemin([
+      imagemin.optipng({optimizationLevel: 3}),
+      imagemin.jpegtran({progressive: true}),
+      imagemin.svgo()
+    ]))
+    .pipe(gulp.dest("source/img"))
+});
+
+gulp.task("webp", function () {
+  return gulp.src(["source/design/**/*.{png,jpg}", "!source/design/preview/**"])
+    .pipe(webp({quality: 80}))
+    .pipe(gulp.dest("source/img/webp"))
+});
+
+gulp.task("sprite", function () {
+  return gulp.src("source/design/svg/{sp-*}.svg")
+    .pipe(svgstore({inlineSvg: true}))
+    .pipe(rename("sprite_icon.svg"))
+    .pipe(gulp.dest("build/img/svg"))
+});
+
 gulp.task("copy", function() {
   return gulp.src([
-    "source/fonts/*"
+    "source/fonts/*",
+    "source/img/**/*",
+    "source/js/lib/*"
   ], {
     base: "source"
   })
@@ -60,9 +93,16 @@ gulp.task("server", function() {
     ui: false
   });
 
-  gulp.watch("source/*.html").on("change", gulp.series("html", server.reload));
-  gulp.watch("source/sass/**/*.{sass,scss}").on("change", gulp.series("style", server.reload));
-  gulp.watch("source/js/**/*.js").on("change", gulp.series("script", server.reload));
+  gulp.watch("source/*.html", gulp.series("html", "refresh"));
+  gulp.watch("source/sass/**/*.{sass,scss}", gulp.series("style", "refresh"));
+  gulp.watch("source/js/**/*.js", gulp.series("script", "refresh"));
+  gulp.watch("source/design/svg/sp-*.svg", gulp.series("sprite", "html", "refresh"));
+  gulp.watch("source/img/**/*", gulp.series("copy", "refresh"));
+});
+
+gulp.task("refresh", function (done) {
+  server.reload();
+  done();
 });
 
 gulp.task("pixel-glass", function() {
