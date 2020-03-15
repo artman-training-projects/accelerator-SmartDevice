@@ -1,19 +1,32 @@
 .page-header {
   color: $color-text-secondary;
 
-  background: url("../img/head-bg_desktop@1x.png") no-repeat center top, #1b2d37 url("../img/chips_mobile@1x.png") no-repeat calc(100vw - 294px) 92px / 301px 220px;
+  background: url("../img/head-bg_desktop@1x.png") no-repeat center top / 1920px 878px, #1b2d37 url("../img/chips_mobile@1x.png") no-repeat calc(100vw - 294px) 92px / 301px 220px;
+
+  @media ($dppx-2) {
+    background: url("../img/head-bg_desktop@2x.png") no-repeat center top / 1920px 878px, #1b2d37 url("../img/chips_mobile@2x.png") no-repeat calc(100vw - 294px) 92px / 301px 220px;
+  }
 
   @media (min-width: $mw-tablet) {
-    background: url("../img/head-bg_desktop@1x.png") no-repeat center top, #1b2d37 url("../img/chips_tablet@1x.png") no-repeat calc(100vw - 260px) 114px / 465px 340px;;
+    background: url("../img/head-bg_desktop@1x.png") no-repeat center top / 1920px 878px, #1b2d37 url("../img/chips_tablet@1x.png") no-repeat calc(100vw - 260px) 114px / 465px 340px;
+  }
+
+  @media (min-width: $mw-tablet) and ($dppx-2) {
+    background: url("../img/head-bg_desktop@2x.png") no-repeat center top / 1920px 878px, #1b2d37 url("../img/chips_tablet@2x.png") no-repeat calc(100vw - 260px) 114px / 465px 340px;
   }
 
   @media (min-width: $mw-desktop) {
-    background: url("../img/head-bg_desktop@1x.png") no-repeat center top, #1b2d37 url("../img/chips_desktop@1x.png") no-repeat calc(100vw - 645px) 260px / 705px 515px;;
+    background: url("../img/head-bg_desktop@1x.png") no-repeat center top / 1920px 878px, #1b2d37 url("../img/chips_desktop@1x.png") no-repeat calc(100vw - 645px) 260px / 705px 515px;
+  }
+
+  @media (min-width: $mw-desktop) and ($dppx-2) {
+    background: url("../img/head-bg_desktop@2x.png") no-repeat center top / 1920px 878px, #1b2d37 url("../img/chips_desktop@2x.png") no-repeat calc(100vw - 645px) 260px / 705px 515px;
   }
 }
 
 .page-header__head {
   display: flex;
+  max-width: 1440px;
   flex-wrap: wrap;
   align-items: center;
   margin: auto;
@@ -79,6 +92,7 @@
 .page-header__item {
   min-width: 26px;
   margin-left: 23px;
+  line-height: 26px;
 
   font-size: 0;
 
@@ -87,11 +101,11 @@
   }
 
   &--mail {
-    background: url("../img/svg/contact-mail.svg") no-repeat left center / 19px 14px;
+    background: url("../img/svg/contact-mail.svg") no-repeat left center / 26px 19px;
   }
 
   &--tel {
-    background: url("../img/svg/contact-tel.svg") no-repeat left center / 18px 18px;
+    background: url("../img/svg/contact-tel.svg") no-repeat left center / 24px 24px;
   }
 
   &--btn {
@@ -108,6 +122,14 @@
 
       color: $color-text-secondary;
       text-decoration: none;
+    }
+
+    &--mail {
+      background: url("../img/svg/contact-mail.svg") no-repeat left center / 19px 14px;
+    }
+
+    &--tel {
+      background: url("../img/svg/contact-tel.svg") no-repeat left center / 18px 18px;
     }
 
     &--btn {
@@ -127,6 +149,7 @@
 
 .page-header__promo {
   margin: auto;
+  max-width: 1440px;
   padding: 20px 15px;
 
   @media (min-width: $mw-tablet) {
@@ -134,7 +157,7 @@
   }
 
   @media (min-width: $mw-desktop) {
-    margin-left: -4px;
+    margin: auto;
   }
 }
 
