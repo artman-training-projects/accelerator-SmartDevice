@@ -2,15 +2,24 @@
   color: $color-text-secondary;
 
   background: url("../img/head-bg_desktop@1x.png") no-repeat center top, #1b2d37 url("../img/chips_mobile@1x.png") no-repeat calc(100vw - 294px) 92px / 301px 220px;
+
+  @media (min-width: $mw-tablet) {
+    background: url("../img/head-bg_desktop@1x.png") no-repeat center top, #1b2d37 url("../img/chips_tablet@1x.png") no-repeat calc(100vw - 260px) 114px / 465px 340px;;
+  }
 }
 
 .page-header__head {
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-start;
+  align-items: center;
   margin: auto;
   margin-bottom: 187px;
   padding: 20px 15px;
+
+  @media (min-width: $mw-tablet) {
+    margin-bottom: 76px;
+    padding: 20px 25px;
+  }
 }
 
 .page-header__logo {
@@ -19,10 +28,34 @@
   margin-right: auto;
 
   background: url("../img/svg/logo.svg") no-repeat center / contain;
+
+  @media (min-width: $mw-tablet) {
+    width: 52px;
+    height: 52px;
+  }
+
   p {
-    position: absolute;
+    @include reset-text;
+
+    display: inline-block;
+    margin-top: 5px;
+    margin-left: 68px;
 
     font-size: 0;
+
+    @media (min-width: $mw-tablet) {
+      width: 200px;
+
+      &:nth-child(1) {
+        font: 700 25px/29px "Roboto Condensed", "Arial", sans-serif;
+        color: $color-text-secondary;
+      }
+
+      &:nth-child(2) {
+        font: 500 12px/14px "Roboto", "Arial", sans-serif;
+        color: $color-gray;
+      }
+    }
   }
 }
 
@@ -35,7 +68,13 @@
 }
 
 .page-header__item {
+  margin-left: 23px;
+
   font-size: 0;
+
+  @media (min-width: $mw-tablet) {
+    margin-left: 33px;
+  }
 
   &--mail {
     width: 26px;
@@ -47,15 +86,22 @@
   &--tel {
     width: 24px;
     height: 24px;
-    margin-left: 23px;
 
     background: url("../img/svg/contact-tel.svg") no-repeat center / contain;
+  }
+
+  &--btn {
+    display: none;
   }
 }
 
 .page-header__promo {
   margin: auto;
   padding: 20px 15px;
+
+  @media (min-width: $mw-tablet) {
+    margin-left: 74px;
+  }
 }
 
 .page-header__title {
@@ -67,6 +113,10 @@
   font: 700 40px/47px "Roboto Condensed", "Arial", sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.07em;
+
+  @media (min-width: $mw-tablet) {
+    font: 700 60px/70px "Roboto Condensed", "Arial", sans-serif;
+  }
 }
 
 .page-header__description {
@@ -74,11 +124,19 @@
 
   position: relative;
 
+  max-width: 440px;
   margin-bottom: 40px;
   padding-left: 50px;
 
   line-height: 25px;
-  text-transform: lowercase;;
+  text-transform: lowercase;
+
+  @media (min-width: $mw-tablet) {
+    margin-bottom: 56px;
+
+    font-size: 18px;
+    line-height: 28px;
+  }
 
   &::before {
     content: "";
@@ -111,5 +169,17 @@
     content: attr(data-link);
 
     font-size: 16px;
+  }
+
+  @media (min-width: $mw-tablet) {
+    width: 379px;
+    margin-bottom: 143px;
+    margin-left: 50px;
+
+    font-size: 16px;;
+
+    &::before {
+      display: none;
+    }
   }
 }
