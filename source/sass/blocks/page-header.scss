@@ -26,9 +26,9 @@
 
 .page-header__head {
   display: flex;
-  max-width: 1440px;
   flex-wrap: wrap;
   align-items: center;
+  max-width: 1440px;
   margin: auto;
   margin-bottom: 187px;
   padding: 20px 15px;
@@ -39,8 +39,8 @@
   }
 
   @media (min-width: $mw-desktop) {
-    padding: 30px 15px;
     margin-bottom: 182px;
+    padding: 30px 15px;
   }
 }
 
@@ -75,7 +75,7 @@
 
       &:nth-child(2) {
         font: 500 12px/14px "Roboto", "Arial", sans-serif;
-        color: $color-gray;
+        color: $color-gray-dark;
       }
     }
   }
@@ -92,9 +92,9 @@
 .page-header__item {
   min-width: 26px;
   margin-left: 23px;
-  line-height: 26px;
 
   font-size: 0;
+  line-height: 26px;
 
   @media (min-width: $mw-tablet) {
     margin-left: 33px;
@@ -136,11 +136,14 @@
       display: inline-block;
       margin-left: 50px;
       a {
-        margin-left: 0;
         @include btn;
+
         width: 180px;
         height: 45px;
+        margin-left: 0;
+
         font: 700 14px/45px "Roboto Condensed", "Arial", sans-serif;
+
         border: 1px solid #ffffff;
       }
     }
@@ -148,8 +151,8 @@
 }
 
 .page-header__promo {
-  margin: auto;
   max-width: 1440px;
+  margin: auto;
   padding: 20px 15px;
 
   @media (min-width: $mw-tablet) {
@@ -177,6 +180,7 @@
 
   @media (min-width: $mw-desktop) {
     width: 720px;
+
     font: 700 80px/94px "Roboto Condensed", "Arial", sans-serif;
   }
 }
@@ -214,11 +218,12 @@
   }
 
   @media (min-width: $mw-desktop) {
+    max-width: 680px;
     margin-bottom: 44px;
     padding-left: 96px;
+
     font-size: 22px;
     line-height: 34px;
-    max-width: 680px;
 
     &::before {
       width: 66px;
@@ -259,7 +264,7 @@
 
   @media (min-width: $mw-desktop) {
     width: 407px;
-    margin-left: 96px;
     margin-bottom: 255px;
+    margin-left: 96px;
   }
 }

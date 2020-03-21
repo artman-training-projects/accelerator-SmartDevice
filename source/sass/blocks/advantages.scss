@@ -1,0 +1,45 @@
+.advantages {
+  margin-top: 35px;
+
+  background-color: $color-light;
+
+  > h2 {
+    @include visually-hidden;
+  }
+}
+
+.advantages__article {
+  margin: 20px 14px;
+  padding: 24px 16px 28px 26px;
+
+  border: 1px solid $color-gray-light;
+  box-shadow: inset 2px 0 $color-blue;
+
+  h3 {
+    @include reset-head;
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    font: 400 20px/28px "Roboto Condensed", "Arial", sans-serif;
+    color: $color-blue;
+  }
+
+  svg {
+    width: 36px;
+    height: 35px;
+
+    fill: $color-blue;
+  }
+
+  svg:hover {
+    fill: $color-light;
+  }
+
+  p {
+    @include reset-text;
+
+    line-height: 21px;
+    color: $color-text-primary;
+  }
+}
