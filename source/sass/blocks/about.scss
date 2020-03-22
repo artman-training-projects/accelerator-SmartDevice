@@ -1,0 +1,41 @@
+.about {
+  padding: 0 15px 55px;
+
+  background-color: $color-light;
+
+  h2 {
+    @include reset-head;
+
+    margin-bottom: 22px;
+
+    font: 400 28px/39px "Roboto Condensed", "Arial", sans-serif;
+  }
+
+  p {
+    @include reset-text;
+
+    max-height: 176px;
+    margin-bottom: 40px;
+    overflow: hidden;
+
+    text-overflow: "ellipsis";
+
+    &:last-of-type {
+      margin-bottom: 30px;
+    }
+  }
+
+  a {
+    @include btn;
+
+    width: 180px;
+    height: 45px;
+    margin-bottom: 10px;
+
+    font: 700 14px/45px "Roboto Condensed", "Arial", sans-serif;
+    color: $color-blue;
+
+    border: 1px solid $color-blue;
+    cursor: pointer;
+  }
+}
