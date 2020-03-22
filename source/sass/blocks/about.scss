@@ -1,7 +1,13 @@
 .about {
-  padding: 0 15px 55px;
+  position: relative;
+
+  padding: 15px 15px 55px;
 
   background-color: $color-light;
+
+  @media (min-width: $mw-tablet) {
+    padding: 15px 25px 55px;
+  }
 
   h2 {
     @include reset-head;
@@ -9,6 +15,13 @@
     margin-bottom: 22px;
 
     font: 400 28px/39px "Roboto Condensed", "Arial", sans-serif;
+
+    @media (min-width: $mw-tablet) {
+      margin-left: 190px;
+
+      font-size: 32px;
+      line-height: 45px;
+    }
   }
 
   p {
@@ -20,8 +33,18 @@
 
     text-overflow: "ellipsis";
 
+    @media (min-width: $mw-tablet) {
+      max-height: 88px;
+      margin-bottom: 25px;
+      margin-left: 190px;
+    }
+
     &:last-of-type {
       margin-bottom: 30px;
+
+      @media (min-width: $mw-tablet) {
+        margin-bottom: 40px;
+      }
     }
   }
 
@@ -37,5 +60,35 @@
 
     border: 1px solid $color-blue;
     cursor: pointer;
+
+    @media (min-width: $mw-tablet) {
+      margin-left: 190px;
+    }
+  }
+
+  span {
+    display: none;
+
+    @media (min-width: $mw-tablet) {
+      position: absolute;
+      top: 15px;
+      left: 7px;
+
+      display: block;
+
+      font: 700 180px/180px "Roboto Condensed", "Arial", sans-serif;
+
+      background: url("../img/backing@1x.jpg") no-repeat center/contain;
+      background-clip: text;
+      transform: rotate(180deg);
+
+      -webkit-text-fill-color: transparent;
+      writing-mode: vertical-lr;
+
+      @media ($dppx-2) {
+        background: url("../img/backing@2x.jpg") no-repeat center/contain;
+        background-clip: text;
+      }
+    }
   }
 }

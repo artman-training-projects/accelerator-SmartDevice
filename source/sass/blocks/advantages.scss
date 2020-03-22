@@ -10,14 +10,14 @@
   display: flex;
   flex-direction: column;
   margin: auto;
-  padding: 35px 14px;
+  padding: 35px 14px 20px;
 
   @media (min-width: $mw-tablet) {
     flex: 1 1 auto;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 55px 25px;
+    padding: 55px 25px 15px;
   }
 
   @media (min-width: $mw-desktop) {
