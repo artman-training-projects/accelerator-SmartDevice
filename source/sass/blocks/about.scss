@@ -1,12 +1,21 @@
 .about {
-  position: relative;
-
-  padding: 15px 15px 55px;
-
   background-color: $color-light;
 
-  @media (min-width: $mw-tablet) {
-    padding: 15px 25px 55px;
+  .about__inner {
+    position: relative;
+
+    margin: auto;
+    padding: 15px 15px 55px;
+
+    @media (min-width: $mw-tablet) {
+      padding: 15px 25px 55px;
+    }
+
+    @media (min-width: $mw-desktop) {
+      box-sizing: border-box;
+      width: 1200px;
+      padding: 40px 25px 55px;
+    }
   }
 
   h2 {
@@ -22,6 +31,14 @@
       font-size: 32px;
       line-height: 45px;
     }
+
+    @media (min-width: $mw-desktop) {
+      margin-bottom: 28px;
+      margin-left: 170px;
+
+      font-size: 36px;
+      line-height: 38px;
+    }
   }
 
   p {
@@ -36,7 +53,12 @@
     @media (min-width: $mw-tablet) {
       max-height: 88px;
       margin-bottom: 25px;
-      margin-left: 190px;
+      margin-left: 180px;
+    }
+
+    @media (min-width: $mw-desktop) {
+      margin-bottom: 22px;
+      margin-left: 170px;
     }
 
     &:last-of-type {
@@ -64,6 +86,10 @@
     @media (min-width: $mw-tablet) {
       margin-left: 190px;
     }
+
+    @media (min-width: $mw-desktop) {
+      margin-left: 170px;
+    }
   }
 
   span {
@@ -89,6 +115,14 @@
         background: url("../img/backing@2x.jpg") no-repeat center/contain;
         background-clip: text;
       }
+    }
+
+    @media (min-width: $mw-desktop) {
+      top: 40px;
+      left: 0;
+
+      font-size: 155px;
+      line-height: 155px;
     }
   }
 }
