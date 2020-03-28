@@ -1,0 +1,72 @@
+.services {
+  background-color: $color-gray-dark;
+}
+
+.services__inner {
+  margin: auto;
+  padding: 50px 15px 35px;
+
+  > h2 {
+    @include reset-head;
+
+    margin-bottom: 40px;
+    margin-left: 10px;
+
+    font: 400 28px/39px "Roboto Condensed", "Arial", sans-serif;
+    color: $color-text-secondary;
+  }
+}
+
+.services__list {
+  @include reset-list;
+
+  width: 290px;
+  margin: auto;
+}
+
+.services__item {
+  position: relative;
+
+  display: block;
+  height: 256px;
+  margin-bottom: 30px;
+
+  cursor: pointer;
+
+  &::after {
+    content: ">";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    width: 63px;
+    height: 63px;
+
+    line-height: 63px;
+    text-align: center;
+    color: $color-text-secondary;
+
+    background-color: $color-blue;
+  }
+
+  h3 {
+    @include reset-head;
+
+    position: absolute;
+    top: 20px;
+    left: 36px;
+
+    width: 170px;
+
+    font: 400 20px/30px "Roboto Condensed", "Arial", sans-serif;
+    color: $color-text-secondary;
+  }
+
+  img {
+    opacity: 0.2;
+  }
+
+  &:hover img {
+    opacity: 1;
+  }
+}
