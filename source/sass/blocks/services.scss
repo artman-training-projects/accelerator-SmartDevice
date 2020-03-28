@@ -14,14 +14,31 @@
 
     font: 400 28px/39px "Roboto Condensed", "Arial", sans-serif;
     color: $color-text-secondary;
+
+    @media (min-width: $mw-tablet) {
+      margin-right: 100px;
+      margin-bottom: 49px;
+      margin-left: 0;
+
+      font: 400 32px/45px "Roboto Condensed", "Arial", sans-serif;
+    }
+  }
+
+  @media (min-width: $mw-tablet) {
+    padding: 50px 29px 30px 26px;
   }
 }
 
 .services__list {
   @include reset-list;
 
-  width: 290px;
+  max-width: 290px;
   margin: auto;
+  overflow: hidden;
+
+  @media (min-width: $mw-tablet) {
+    max-width: 720px;
+  }
 }
 
 .services__item {
@@ -32,6 +49,10 @@
   margin-bottom: 30px;
 
   cursor: pointer;
+
+  @media (min-width: $mw-tablet) {
+    margin-bottom: 47px;
+  }
 
   &::after {
     content: ">";
@@ -60,6 +81,11 @@
 
     font: 400 20px/30px "Roboto Condensed", "Arial", sans-serif;
     color: $color-text-secondary;
+
+    @media (min-width: $mw-tablet) {
+      top: 40px;
+      left: 45px;
+    }
   }
 
   img {
