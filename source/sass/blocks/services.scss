@@ -22,10 +22,22 @@
 
       font: 400 32px/45px "Roboto Condensed", "Arial", sans-serif;
     }
+
+    @media (min-width: $mw-desktop) {
+      margin-bottom: 54px;
+
+      font: 400 36px/51px "Roboto Condensed", "Arial", sans-serif;
+    }
   }
 
   @media (min-width: $mw-tablet) {
+    max-width: 720px;
     padding: 50px 29px 30px 26px;
+  }
+
+  @media (min-width: $mw-desktop) {
+    max-width: 1170px;
+    padding: 86px 29px 80px 26px;
   }
 }
 
@@ -38,6 +50,13 @@
 
   @media (min-width: $mw-tablet) {
     max-width: 720px;
+  }
+
+  @media (min-width: $mw-desktop) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1170px;
   }
 }
 
@@ -52,6 +71,11 @@
 
   @media (min-width: $mw-tablet) {
     margin-bottom: 47px;
+  }
+
+  @media (min-width: $mw-desktop) {
+    width: 370px;
+    height: 620px;
   }
 
   &::after {
@@ -85,6 +109,10 @@
     @media (min-width: $mw-tablet) {
       top: 40px;
       left: 45px;
+    }
+
+    @media (min-width: $mw-desktop) {
+      top: 50px;
     }
   }
 
