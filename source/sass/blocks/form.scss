@@ -7,10 +7,18 @@
 }
 
 form {
+  margin: auto;
   padding: 28px 15px 44px;
 
   @media (min-width: $mw-tablet) {
     padding: 80px 15px 77px;
+  }
+
+  @media (min-width: $mw-desktop) {
+    max-width: 1170px;
+    padding: 90px 15px 85px;
+
+    background: url("../img/airplane@1x.png") no-repeat left 160px;
   }
 
   fieldset {
@@ -22,6 +30,12 @@ form {
     @media (min-width: $mw-tablet) {
       width: 590px;
       margin: auto;
+    }
+
+    @media (min-width: $mw-desktop) {
+      width: 570px;
+      margin-right: 0;
+      margin-left: auto;
     }
 
     div:nth-of-type(1) {
@@ -36,9 +50,13 @@ form {
         margin-bottom: 45px;
       }
 
+      @media (min-width: $mw-desktop) {
+        margin-bottom: 40px;
+      }
+
       input {
         flex-grow: 1;
-        min-width: 260px;
+        min-width: 250px;
         height: 52px;
         margin-bottom: 30px;
         padding: 0;
@@ -53,6 +71,11 @@ form {
           flex-grow: 0;
           width: 260px;
           margin-bottom: 40px;
+        }
+
+        @media (min-width: $mw-desktop) {
+          width: 250px;
+          height: 50px;
         }
       }
 
@@ -72,6 +95,10 @@ form {
 
         @media (min-width: $mw-tablet) {
           min-height: 160px;
+        }
+
+        @media (min-width: $mw-desktop) {
+          min-height: 154px;
         }
       }
 
@@ -111,6 +138,10 @@ form {
         @media (min-width: $mw-tablet) {
           width: 280px;
         }
+
+        @media (min-width: $mw-tablet) {
+          width: 270px;
+        }
       }
 
       input {
@@ -138,6 +169,10 @@ form {
           margin-top: 10px;
         }
 
+        @media (min-width: $mw-desktop) {
+          width: 230px;
+        }
+
         &::before {
           content: "";
           position: absolute;
@@ -163,6 +198,12 @@ form {
 
     @media (min-width: $mw-tablet) {
       font: 400 32px/45px "Roboto Condensed", "Arial", sans-serif;
+    }
+
+    @media (min-width: $mw-desktop) {
+      margin-bottom: 12px;
+
+      font: 400 36px/51px "Roboto Condensed", "Arial", sans-serif;
     }
   }
 
