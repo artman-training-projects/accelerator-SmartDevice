@@ -9,18 +9,36 @@
 form {
   padding: 28px 15px 44px;
 
+  @media (min-width: $mw-tablet) {
+    padding: 80px 15px 77px;
+  }
+
   fieldset {
     margin: 0;
     padding: 0;
 
     border: none;
 
+    @media (min-width: $mw-tablet) {
+      width: 590px;
+      margin: auto;
+    }
+
     div:nth-of-type(1) {
       display: flex;
       flex-direction: column;
       margin-bottom: 28px;
 
+      @media (min-width: $mw-tablet) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 45px;
+      }
+
       input {
+        flex-grow: 1;
+        min-width: 260px;
         height: 52px;
         margin-bottom: 30px;
         padding: 0;
@@ -30,9 +48,17 @@ form {
 
         background-color: rgba(255, 255, 255, 0.1);
         border: none;
+
+        @media (min-width: $mw-tablet) {
+          flex-grow: 0;
+          width: 260px;
+          margin-bottom: 40px;
+        }
       }
 
       textarea {
+        flex-grow: 1;
+        min-width: 260px;
         min-height: 105px;
         padding: 0;
         padding-left: 20px;
@@ -41,6 +67,12 @@ form {
 
         background-color: rgba(255, 255, 255, 0.1);
         border: none;
+
+        resize: none;
+
+        @media (min-width: $mw-tablet) {
+          min-height: 160px;
+        }
       }
 
       ::placeholder {
@@ -55,6 +87,13 @@ form {
       width: 290px;
       margin: auto;
 
+      @media (min-width: $mw-tablet) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 100%;
+      }
+
       button {
         @include btn;
 
@@ -68,6 +107,10 @@ form {
 
         background-color: $color-blue;
         border: 1px solid $color-light;
+
+        @media (min-width: $mw-tablet) {
+          width: 280px;
+        }
       }
 
       input {
@@ -89,6 +132,11 @@ form {
 
         cursor: pointer;
         opacity: 0.8;
+
+        @media (min-width: $mw-tablet) {
+          width: 235px;
+          margin-top: 10px;
+        }
 
         &::before {
           content: "";
@@ -112,6 +160,10 @@ form {
 
     font: 400 28px/39px "Roboto Condensed", "Arial", sans-serif;
     color: $color-text-secondary;
+
+    @media (min-width: $mw-tablet) {
+      font: 400 32px/45px "Roboto Condensed", "Arial", sans-serif;
+    }
   }
 
   p {
@@ -119,6 +171,10 @@ form {
 
     margin-bottom: 24px;
 
-    color: $color-text-secondary;;
+    color: $color-text-secondary;
+
+    @media (min-width: $mw-tablet) {
+      margin-bottom: 50px;
+    }
   }
 }
