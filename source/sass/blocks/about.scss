@@ -80,8 +80,8 @@
     font: 700 14px/45px "Roboto Condensed", "Arial", sans-serif;
     color: $color-blue;
 
+    background-color: $color-light;
     border: 1px solid $color-blue;
-    cursor: pointer;
 
     @media (min-width: $mw-tablet) {
       margin-left: 190px;

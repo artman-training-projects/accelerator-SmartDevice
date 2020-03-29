@@ -1,0 +1,124 @@
+.form {
+  background-color: $color-blue;
+
+  > h2 {
+    @include visually-hidden;
+  }
+}
+
+form {
+  padding: 28px 15px 44px;
+
+  fieldset {
+    margin: 0;
+    padding: 0;
+
+    border: none;
+
+    div:nth-of-type(1) {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 28px;
+
+      input {
+        height: 52px;
+        margin-bottom: 30px;
+        padding: 0;
+        padding-left: 20px;
+
+        color: $color-text-secondary;
+
+        background-color: rgba(255, 255, 255, 0.1);
+        border: none;
+      }
+
+      textarea {
+        min-height: 105px;
+        padding: 0;
+        padding-left: 20px;
+
+        color: $color-text-secondary;
+
+        background-color: rgba(255, 255, 255, 0.1);
+        border: none;
+      }
+
+      ::placeholder {
+        padding-top: 20px;
+        padding-left: 20px;
+
+        font: 400 16px/52px "PT Mono", "Courier New", monospace;
+      }
+    }
+
+    div:nth-of-type(2) {
+      width: 290px;
+      margin: auto;
+
+      button {
+        @include btn;
+
+        width: 100%;
+        min-width: 270px;
+        min-height: 46px;
+        margin-bottom: 28px;
+
+        font: 700 14px/16px "Roboto Condensed", "Arial", sans-serif;
+        color: $color-text-secondary;
+
+        background-color: $color-blue;
+        border: 1px solid $color-light;
+      }
+
+      input {
+        @include visually-hidden;
+      }
+
+      input:checked + label::before {
+        background: url("../img/svg/check.svg") no-repeat center;
+      }
+
+      label {
+        position: relative;
+
+        display: block;
+        margin-left: 35px;
+
+        font: 400 14px/16px "PT Mono", "Courier New", monospace;
+        color: $color-text-secondary;
+
+        cursor: pointer;
+        opacity: 0.8;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 5px;
+          left: -35px;
+
+          width: 16px;
+          height: 16px;
+
+          border: 1px solid $color-light;
+          ;
+        }
+      }
+    }
+  }
+
+  legend {
+    margin-bottom: 16px;
+    padding: 0;
+
+    font: 400 28px/39px "Roboto Condensed", "Arial", sans-serif;
+    color: $color-text-secondary;
+  }
+
+  p {
+    @include reset-text;
+
+    margin-bottom: 24px;
+
+    color: $color-text-secondary;;
+  }
+}
