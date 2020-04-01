@@ -1,6 +1,15 @@
 .page-footer {
-  display: flex;
-  flex-direction: column;
-
   background-color: $color-bg-light;
+}
+
+.page-footer__inner {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: auto;
+
+  @media (min-width: $mw-desktop) {
+    width: 1400px;
+  }
 }
