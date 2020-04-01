@@ -1,0 +1,82 @@
+.social {
+  align-items: center;
+  width: 100%;
+  padding: 50px 0;
+
+  border-bottom: 1px solid $color-dop-gray;
+}
+
+.social__logo {
+  display: block;
+  width: 220px;
+  min-height: 52px;
+  margin: auto;
+  margin-bottom: 20px;
+
+  background: url("../img/svg/logo.svg") no-repeat 0 0;
+
+  p {
+    @include reset-text;
+
+    margin-left: 68px;
+  }
+
+  p:nth-of-type(1) {
+    font: 700 25px/29px "Roboto Condensed", "Arial", sans-serif;
+    color: $color-gray-dark;
+  }
+
+  p:nth-of-type(2) {
+    font: 500 12px/14px "Roboto", "Arial", sans-serif;
+    color: $color-gray-medium;
+  }
+}
+
+.social__years {
+  @include reset-text;
+
+  margin-bottom: 32px;
+
+  font-size: 13px;
+  line-height: 24px;
+  text-align: center;
+  color: $color-gray-dark;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+
+  opacity: 0.5;
+}
+
+.social__list {
+  @include reset-list;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 112px;
+  margin: auto;
+}
+
+.social__item {
+  display: block;
+  width: 28px;
+  height: 28px;
+
+  font-size: 0;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+
+  &--fb {
+    background-image: url("../img/svg/social-fb.svg");
+  }
+
+  &--ok {
+    background-image: url("../img/svg/social-ok.svg");
+  }
+
+  &--vk {
+    background-image: url("../img/svg/social-vk.svg");
+  }
+}
