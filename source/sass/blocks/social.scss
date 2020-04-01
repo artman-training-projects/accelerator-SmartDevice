@@ -4,6 +4,13 @@
   padding: 50px 0;
 
   border-bottom: 1px solid $color-dop-gray;
+
+  @media (min-width: $mw-tablet) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 22px 0;
+  }
 }
 
 .social__logo {
@@ -14,6 +21,11 @@
   margin-bottom: 20px;
 
   background: url("../img/svg/logo.svg") no-repeat 0 0;
+
+  @media (min-width: $mw-tablet) {
+    margin: auto;
+    margin-left: 25px;
+  }
 
   p {
     @include reset-text;
@@ -45,6 +57,10 @@
   letter-spacing: 0.04em;
 
   opacity: 0.5;
+
+  @media (min-width: $mw-tablet) {
+    margin: auto;
+  }
 }
 
 .social__list {
