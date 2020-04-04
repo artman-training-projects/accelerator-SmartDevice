@@ -1,4 +1,280 @@
 .modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
   display: none;
+
+  background-color: rgba(0, 0, 0, 0.7);
+
+  > h4 {
+    @include visually-hidden;
+  }
 }
 
+.modal__form {
+  position: relative;
+
+  box-sizing: border-box;
+  min-width: 320px;
+  max-width: 490px;
+  margin: auto;
+  margin-top: 20px;
+
+  background-color: $color-blue;
+
+  form {
+    @media (min-width: $mw-tablet) {
+      padding: 28px 15px 44px;
+    }
+
+    @media (min-width: $mw-desktop) {
+      padding: 28px 15px 44px;
+
+      background: none;
+    }
+  }
+
+  fieldset {
+    margin: 0;
+    padding: 0;
+
+    border: none;
+
+    @media (min-width: $mw-tablet) {
+      width: auto;
+    }
+
+    @media (min-width: $mw-desktop) {
+      width: auto;
+      margin: auto;
+    }
+
+    div:nth-of-type(1) {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 28px;
+
+      @media (min-width: $mw-tablet) {
+        flex-direction: column;
+        margin-bottom: 28px;
+      }
+
+      @media (min-width: $mw-desktop) {
+        margin-bottom: 28px;
+      }
+
+      input {
+        flex-grow: 1;
+        min-width: 250px;
+        height: 52px;
+        margin-bottom: 30px;
+        padding: 0;
+        padding-left: 20px;
+
+        color: $color-text-secondary;
+
+        background-color: rgba(255, 255, 255, 0.1);
+        border: none;
+
+        &:hover,
+        &:focus {
+          outline: 1px solid $color-gray-medium;
+        }
+
+        @media (min-width: $mw-tablet) {
+          flex-grow: 1;
+          width: auto;
+          margin-bottom: 30px;
+        }
+
+        @media (min-width: $mw-desktop) {
+          width: auto;
+          height: 52px;
+        }
+      }
+
+      textarea {
+        flex-grow: 1;
+        min-width: 260px;
+        min-height: 105px;
+        padding: 0;
+        padding-left: 20px;
+
+        color: $color-text-secondary;
+
+        background-color: rgba(255, 255, 255, 0.1);
+        border: none;
+
+        resize: none;
+
+        &:hover,
+        &:focus {
+          outline: 1px solid $color-gray-medium;
+        }
+
+        @media (min-width: $mw-tablet) {
+          min-height: 105px;
+        }
+
+        @media (min-width: $mw-desktop) {
+          min-height: 105px;
+        }
+      }
+
+      ::placeholder {
+        font: 400 16px/52px "PT Mono", "Courier New", monospace;
+      }
+    }
+
+    div:nth-of-type(2) {
+      width: auto;
+      margin: auto;
+
+      @media (min-width: $mw-tablet) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 100%;
+      }
+
+      button {
+        @include btn;
+
+        width: 100%;
+        min-width: 270px;
+        min-height: 46px;
+        margin-bottom: 28px;
+
+        font: 700 14px/16px "Roboto Condensed", "Arial", sans-serif;
+        color: $color-text-secondary;
+
+        background-color: $color-blue;
+        border: 1px solid $color-light;
+
+        &:hover,
+        &:active {
+          opacity: 0.6;
+        }
+
+        @media (min-width: $mw-tablet) {
+          width: 100%;
+        }
+
+        @media (min-width: $mw-desktop) {
+          width: 100%;
+        }
+      }
+
+      input {
+        @include visually-hidden;
+      }
+
+      input:checked + label::before {
+        background: url("../img/svg/check.svg") no-repeat center;
+      }
+
+      label {
+        position: relative;
+
+        display: block;
+        max-width: 335px;
+        margin: auto;
+        padding-left: 35px;
+
+        font: 400 14px/16px "PT Mono", "Courier New", monospace;
+        color: $color-text-secondary;
+
+        cursor: pointer;
+        opacity: 0.8;
+
+        &:hover,
+        &:active {
+          opacity: 0.6;
+        }
+
+        @media (min-width: $mw-tablet) {
+          width: 335px;
+          margin-top: 0;
+        }
+
+        @media (min-width: $mw-desktop) {
+          width: 335px;
+        }
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 5px;
+          left: -5px;
+
+          width: 16px;
+          height: 16px;
+
+          border: 1px solid $color-light;
+          ;
+        }
+      }
+    }
+  }
+
+  legend {
+    font: 400 28px/39px "Roboto Condensed", "Arial", sans-serif;
+    color: $color-text-secondary;
+  }
+
+  p {
+    font: 400 16px/22px "PT Mono", "Courier New", monospace;
+    color: $color-text-secondary;
+
+    @media (min-width: $mw-tablet) {
+      margin-bottom: 24px;
+    }
+  }
+}
+
+.modal__close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
+  width: 20px;
+  height: 20px;
+  padding: 0;
+
+  font-size: 0;
+
+  background-color: transparent;
+  border: none;
+  transform: rotate(45deg);
+  cursor: pointer;
+
+  &:hover,
+  &:active {
+    opacity: 0.6;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+
+    background-color: $color-text-secondary;
+  }
+
+  &::before {
+    top: 0;
+
+    width: 1px;
+    height: 20px;
+  }
+
+  &::after {
+    left: 0;
+
+    width: 20px;
+    height: 1px;
+  }
+}
