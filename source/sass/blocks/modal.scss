@@ -5,9 +5,13 @@
   bottom: 0;
   left: 0;
 
-  display: none;
+  display: block;
 
   background-color: rgba(0, 0, 0, 0.7);
+
+  &--off {
+    display: none;
+  }
 
   > h4 {
     @include visually-hidden;

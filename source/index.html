@@ -229,7 +229,7 @@
     </div>
   </footer>
 
-  <section class="modal">
+  <section class="modal modal--off">
     <h4>Закажите звонок</h4>
 
     <div class="modal__form">
@@ -240,7 +240,7 @@
 
           <div>
             <input id="form-modal__name" type="text" name="name" placeholder="Имя" required>
-            <input id="form-modal__tel" type="tel" name="number" placeholder="Телефон" title="Введите телефон +7хххххххххх" pattern="[0-9]{11}" required>
+            <input id="form-modal__tel" type="tel" name="number" placeholder="Телефон" title="Введите телефон +7хххххххххх" pattern="(\+7[-_()\s]+|\+7\s?[(]{0,1}[0-9]{3}[)]{0,1}\s?\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2})" required>
             <textarea id="form-modal__message" name="message" placeholder="Ваш вопрос" required></textarea>
           </div>
 
@@ -256,5 +256,7 @@
       <button type="button" class="modal__close">закрыть окно</button>
     </div>
   </section>
+
+  <script src="js/main.min.js"></script>
 </body>
 </html>

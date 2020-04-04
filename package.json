@@ -24,12 +24,12 @@
     "source/sass/**/*.{sass,scss}"
   ],
   "devDependencies": {
-    "@htmlacademy/editorconfig-cli": "1.x",
+    "@htmlacademy/editorconfig-cli": "^1.x",
     "autoprefixer": "^9.7.5",
     "browser-sync": "^2.26.x",
     "del": "^5.1.x",
     "eslint": "^6.8.x",
-    "eslint-config-htmlacademy": "0.5.x",
+    "eslint-config-htmlacademy": "^0.5.x",
     "gulp": "^4.0.x",
     "gulp-concat": "^2.6.x",
     "gulp-csso": "^4.0.x",
@@ -53,5 +53,9 @@
     "test": "npm run editorconfig && npm run stylelint",
     "build": "gulp build",
     "start": "gulp start"
+  },
+  "dependencies": {
+    "deep-extend": "^0.6.0",
+    "merge": "^1.2.1"
   }
 }
