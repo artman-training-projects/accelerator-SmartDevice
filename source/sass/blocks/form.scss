@@ -67,6 +67,11 @@ form {
         background-color: rgba(255, 255, 255, 0.1);
         border: none;
 
+        &:hover,
+        &:focus {
+          outline: 1px solid $color-gray-medium;
+        }
+
         @media (min-width: $mw-tablet) {
           flex-grow: 0;
           width: 260px;
@@ -93,6 +98,11 @@ form {
 
         resize: none;
 
+        &:hover,
+        &:focus {
+          outline: 1px solid $color-gray-medium;
+        }
+
         @media (min-width: $mw-tablet) {
           min-height: 160px;
         }
@@ -103,9 +113,6 @@ form {
       }
 
       ::placeholder {
-        padding-top: 20px;
-        padding-left: 20px;
-
         font: 400 16px/52px "PT Mono", "Courier New", monospace;
       }
     }
@@ -135,6 +142,11 @@ form {
         background-color: $color-blue;
         border: 1px solid $color-light;
 
+        &:hover,
+        &:active {
+          opacity: 0.6;
+        }
+
         @media (min-width: $mw-tablet) {
           width: 280px;
         }
@@ -163,6 +175,11 @@ form {
 
         cursor: pointer;
         opacity: 0.8;
+
+        &:hover,
+        &:active {
+          opacity: 0.6;
+        }
 
         @media (min-width: $mw-tablet) {
           width: 235px;

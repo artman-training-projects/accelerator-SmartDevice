@@ -144,6 +144,11 @@
 
   cursor: pointer;
   opacity: 0.5;
+
+  &:hover,
+  &:active {
+    opacity: 1;
+  }
 }
 
 .info__section input:checked ~ label::after,

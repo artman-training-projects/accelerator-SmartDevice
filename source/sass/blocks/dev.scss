@@ -30,6 +30,11 @@
 
     cursor: pointer;
 
+    &:hover,
+    &:active {
+      opacity: 0.6;
+    }
+
     @media (min-width: $mw-desktop) {
       margin: 0 25px;
     }
