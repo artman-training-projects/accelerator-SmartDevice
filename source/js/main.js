@@ -1,11 +1,10 @@
-let modal = document.querySelector('.modal');
-let requestName = modal.querySelector('#form-modal__name');
-let requestTel = modal.querySelector('#form-modal__tel');
-let requestText = modal.querySelector('#form-modal__message');
+const modal = document.querySelector('.modal');
+const requestName = modal.querySelector('#form-modal__name');
+const requestTel = modal.querySelector('#form-modal__tel');
+const requestText = modal.querySelector('#form-modal__message');
 
 /* Открытие и закрытие формы по кнопке */
-let requestShowButton = document.querySelector('.page-header__item--btn');
-
+const requestShowButton = document.querySelector('.page-header__item--btn');
 requestShowButton.addEventListener('click', function (evt) {
   modal.classList.remove('modal--off');
   requestName.focus();
@@ -26,7 +25,7 @@ window.addEventListener('keydown', function (evt) {
 })
 
 /* Закрытие формы нажатием крестика */
-let modalCloseButton = modal.querySelector('.modal__close');
+const modalCloseButton = modal.querySelector('.modal__close');
 modalCloseButton.addEventListener('click', function (evt) {
   if (!modal.classList.contains('modal--off')) {
     evt.preventDefault();
@@ -36,7 +35,7 @@ modalCloseButton.addEventListener('click', function (evt) {
 
 /* Проверка заполненности полей формы перед отправкой,
 загрузках данных из localStorage, если доступно */
-let modalForm = modal.querySelector('form');
+const modalForm = modal.querySelector('form');
 modalForm.addEventListener('submit', function (evt) {
   if (!modal.classList.contains('modal--off')) {
     evt.preventDefault();
